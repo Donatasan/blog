@@ -1,10 +1,5 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
-
-<body>
-</body>
-</html>
+	<!-- footer -->
+		<div class="footer">
+			<p>MyViewers &copy; <?php echo date('Y'); ?></p>
+		</div>
+		<!-- // footer -->
