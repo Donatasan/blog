@@ -8,6 +8,8 @@
 <?php require_once('includes/head_section.php') ?>
 <title>LifeBlog | Home </title>
 </head><body>
+	
+	
 <div class="container">
   <?php include('includes/navbar.php') ?>
   <?php include('includes/banner.php') ?>
@@ -16,6 +18,8 @@
     <hr>
    
 	  <?php foreach ($posts as $post): ?>
+	 <h3><?php echo $post['name'] ?></h3>
+	
     <div class="post" style="margin-left: 0px;"> 
 		<img src="<?php echo BASE_URL . '/static/images/' . $post['image']; ?>" class="post_image" alt=""> 
 		<?php if (isset($post['topic']['name'])): ?>
