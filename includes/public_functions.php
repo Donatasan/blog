@@ -11,19 +11,15 @@ function getPublishedPosts() {
 	// fetch all posts as an associative array called $posts
 	$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-	
-	$final_posts = array();
+$final_posts = array();
 	foreach ($posts as $post) {
 		$post['topic'] = getPostTopic($post['id']); 
 		array_push($final_posts, $post);
 	}
-	return $posts;
+	return $final_posts;
+
 }
 
-/* * * * * * * * * * * * * * *
-* Receives a post id and
-* Returns topic of the post
-* * * * * * * * * * * * * * */
 function getPostTopic($post_id){
 	global $conn;
 	$sql = "SELECT * FROM topic WHERE id=
@@ -32,6 +28,7 @@ function getPostTopic($post_id){
 	$topic = mysqli_fetch_assoc($result);
 	return $topic;
 }
+
 /* * * * * * * * * * * * * * * *
 * Returns all posts under a topic
 * * * * * * * * * * * * * * * * */
@@ -59,9 +56,21 @@ function getPublishedPostsByTopic($topic_id) {
 function getTopicNameById($id)
 {
 	global $conn;
-	$sql = "SELECT name FROM topic WHERE id=$id";
+	$sql = "SELECT name FROM topics WHERE id=$id";
 	$result = mysqli_query($conn, $sql);
 	$topic = mysqli_fetch_assoc($result);
 	return $topic['name'];
 }
+
+
+
+
+
+
+
+
+
+
 ?>
+
+

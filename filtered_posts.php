@@ -5,7 +5,7 @@
 	// Get posts under a particular topic
 	if (isset($_GET['topic'])) {
 		$topic_id = $_GET['topic'];
-		$posts = getPublishedPostsByTopic($topic_id);
+		$postS = getPublishedPostsByTopic($topic_id);
 	}
 ?>
 	<title>LifeBlog | Home </title>
